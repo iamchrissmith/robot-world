@@ -1,1 +1,18 @@
 <h1>My Robots</h1>
+<a class="btn btn-primary" href="/robots/new">New Robot</a>
+<ul class="container row list-unstyled">
+  <% @robots.each do |robot| %> 
+    <li class="col-md-4">
+      <div class="col-md-12">
+        <h1><%= robot.title %></h1>
+        <p><%= robot.city %>, <%= robot.state %></p>
+        <p><%= robot.department %></p>
+      </div>
+      <p class="col-md-6 text-center"><a class="col-md-12 btn btn-info" href="/robots/edit">Edit</a></p>
+      <form class="col-md-6 text-center" action="/tasks<%= robot.id %>" method="POST">
+        <input type="hidden" name="_method" value="DELETE">
+        <input type="submit" class="btn btn-danger" value="SELF DESTRUCT!">
+      </form>
+    </li>
+  <% end %>
+</ul>
