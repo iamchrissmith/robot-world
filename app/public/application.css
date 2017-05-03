@@ -2,3 +2,6 @@ form input[type="text"] {
     display:block;
 }
 
+.btn .glyphicon {
+  margin-right:10px;
+}
